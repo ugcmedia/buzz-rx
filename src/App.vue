@@ -326,6 +326,7 @@ export default {
           min-width: 500px;
         }
         button {
+          color: #fff;
           margin-top: 20px;
           width: 171px;
           height: 40px;
