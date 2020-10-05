@@ -3,71 +3,74 @@
     <Header />
     <!-- Hero Banner Starts -->
     <div class="hero-banner">
-      <div class="download">
-        Download the App
-      </div>
-      <div class="saving">
-        Save up to 80% on your prescriptions instantly!
-      </div>
-      <div class="grid">
-        <img class="app" src="@/assets/BuzzRx-App.png" alt="BuzzRx App" />
-        <div class="right-section">
-          <div class="list">
-            <div>
-              <img class="check" src="@/assets/group.svg" alt="Check" />
-              <span class="desc">
-                On-the-go Savings
-              </span>
+      <div class="hero-space">
+        <div class="download">
+          Download the App
+        </div>
+        <div class="saving">
+          Save up to 80% on your prescriptions instantly!
+        </div>
+        <div class="grid">
+          <img class="app" src="@/assets/BuzzRx-App.png" alt="BuzzRx App" />
+          <div class="right-section">
+            <div class="list">
+              <div>
+                <img class="check" src="@/assets/group.svg" alt="Check" />
+                <span class="desc">
+                  On-the-go Savings
+                </span>
+              </div>
+              <div>
+                <img class="check" src="@/assets/group.svg" alt="Check" />
+                <span class="desc">
+                  Price Alerts
+                </span>
+              </div>
+              <div>
+                <img class="check" src="@/assets/group.svg" alt="Check" />
+                <span class="desc">
+                  Save your Prescriptions
+                </span>
+              </div>
+              <div>
+                <img class="check" src="@/assets/group.svg" alt="Check" />
+                <span class="desc">
+                  Set Refill Reminders
+                </span>
+              </div>
+              <div>
+                <img class="check" src="@/assets/group.svg" alt="Check" />
+                <span class="desc">
+                  Locate Pharmacies
+                </span>
+              </div>
             </div>
-            <div>
-              <img class="check" src="@/assets/group.svg" alt="Check" />
-              <span class="desc">
-                Price Alerts
-              </span>
-            </div>
-            <div>
-              <img class="check" src="@/assets/group.svg" alt="Check" />
-              <span class="desc">
-                Save your Prescriptions
-              </span>
-            </div>
-            <div>
-              <img class="check" src="@/assets/group.svg" alt="Check" />
-              <span class="desc">
-                Set Refill Reminders
-              </span>
-            </div>
-            <div>
-              <img class="check" src="@/assets/group.svg" alt="Check" />
-              <span class="desc">
-                Locate Pharmacies
-              </span>
-            </div>
-          </div>
 
-          <div class="free-app">
-            <span>
-              Text me the FREE app!
-            </span>
-            <b-input-group>
-              <b-input-group-prepend is-text>
-                <img src="@/assets/text.svg" alt="phone" />
-              </b-input-group-prepend>
-              <b-form-input
-                aria-label="Text input"
-                placeholder="Enter Phone Number"
-              ></b-form-input>
-            </b-input-group>
-            <button>
-              GET THE APP
-            </button>
-            <div class="download-app">
-              <img src="@/assets/app-store-badge.svg" alt="App Store" />
-              <img src="@/assets/google-play-badge.svg" alt="Google Play" />
+            <div class="free-app">
+              <span>
+                Text me the FREE app!
+              </span>
+              <b-input-group>
+                <b-input-group-prepend is-text>
+                  <img src="@/assets/text.svg" alt="phone" />
+                </b-input-group-prepend>
+                <b-form-input
+                  aria-label="Text input"
+                  placeholder="Enter Phone Number"
+                ></b-form-input>
+              </b-input-group>
+              <button @click="$bvModal.show('text-modal')">
+                GET THE APP
+              </button>
+              <div class="download-app">
+                <img src="@/assets/app-store-badge.svg" alt="App Store" />
+                <img src="@/assets/google-play-badge.svg" alt="Google Play" />
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="info">
         <div class="as-seen">
           As seen on
@@ -165,7 +168,7 @@
           <span>
             Text me the FREE app!
           </span>
-          <div class="number">
+          <div>
             <b-input-group>
               <b-input-group-prepend is-text>
                 <img src="@/assets/text.svg" alt="phone" />
@@ -176,24 +179,27 @@
               ></b-form-input>
             </b-input-group>
           </div>
-          <button>
+          <button @click="$bvModal.show('text-modal')">
             GET THE APP
           </button>
         </div>
       </div>
     </div>
+    <Modal />
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
 import Review from "./components/Review.vue";
+import Modal from "./components/Modal.vue";
 
 export default {
   name: "App",
   components: {
     Header,
-    Review
+    Review,
+    Modal
   },
   data() {
     return {
@@ -346,16 +352,15 @@ export default {
   width: 100%;
   height: 375px;
   background: rgb(255, 211, 54);
-  // background: linear-gradient(
-  //   0deg,
-  //   rgba(255, 211, 54, 1) 0%,
-  //   rgba(255, 211, 54, 1) 50%,
-  //   rgba(255, 199, 0, 1) 100%
-  // );
   background-image: url("assets/hex-pattern.svg");
-  // background-repeat: repeat-y;
   padding-left: 70px;
-  
+  .hero-space {
+    background-image: url("assets/hex-space.svg");
+    height: 375px;
+    overflow: visible;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
   .download {
     padding-top: 30px;
     font-size: 54px;
@@ -437,6 +442,7 @@ export default {
           border-radius: 28px;
           opacity: 1;
           border: none;
+          outline: none;
         }
         .download-app {
           margin-top: 40px;
@@ -449,7 +455,7 @@ export default {
     }
   }
   .info {
-    margin-top: 85px;
+    margin-top: 350px;
     .as-seen {
       text-align: center;
       font: normal normal normal 14px/30px Lato;
