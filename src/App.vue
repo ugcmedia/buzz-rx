@@ -7,7 +7,7 @@
         Download the App
       </div>
       <div class="saving">
-        Save up to 80% on your prescriptions instantly
+        Save up to 80% on your prescriptions instantly!
       </div>
       <div class="grid">
         <img class="app" src="@/assets/BuzzRx-App.png" alt="BuzzRx App" />
@@ -28,7 +28,7 @@
             <div>
               <img class="check" src="@/assets/group.svg" alt="Check" />
               <span class="desc">
-                Save your prescriptions
+                Save your Prescriptions
               </span>
             </div>
             <div>
@@ -176,13 +176,9 @@
               ></b-form-input>
             </b-input-group>
           </div>
-
           <button>
             GET THE APP
           </button>
-          <div class="text-me">
-            Text me the FREE app
-          </div>
         </div>
       </div>
     </div>
@@ -203,28 +199,113 @@ export default {
     return {
       rIndex: 0,
       reviews: [
-        "Love this app! It saves me $24 on my prescription every month.",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
-        "Love this app! It saves me $24",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24",
-        "Love this app! It saves me $24",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24",
-        "Love this app! It saves me $24",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
-        "Love this app! It saves me $24 on my prescription every month.",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
-        "Love this app! It saves me $24",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
-        "Love this app! It saves me $24 on my prescription every month.",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month."
+        {
+          stars: 5,
+          text: "Love this app! It saves me $24 on my prescription every month."
+        },
+        {
+          stars: 4,
+          text:
+            "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month."
+        },
+        {
+          stars: 5,
+          text: "Love this app! It saves me $24"
+        },
+        {
+          stars: 3,
+          text:
+            "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month."
+        },
+        {
+          stars: 4,
+          text:
+            "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24"
+        },
+        {
+          stars: 3,
+          text: "Love this app! It saves me $24"
+        },
+        {
+          stars: 4,
+          text:
+            "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24"
+        },
+        {
+          stars: 5,
+          text:
+            "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month."
+        },
+        {
+          stars: 3,
+          text:
+            "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24"
+        },
+        {
+          stars: 4,
+          text: "Love this app! It saves me $24"
+        },
+        {
+          stars: 5,
+          text:
+            "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24"
+        },
+        {
+          stars: 5,
+          text:
+            "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month."
+        },
+
+        {
+          stars: 3,
+          text: "Love this app! It saves me $24 on my prescription every month."
+        },
+
+        {
+          stars: 4,
+          text:
+            "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month."
+        },
+
+        {
+          stars: 3,
+          text: "Love this app! It saves me $24"
+        },
+
+        {
+          stars: 4,
+          text:
+            "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month."
+        },
+        {
+          stars: 3,
+          text: "Love this app! It saves me $24 on my prescription every month."
+        },
+        {
+          stars: 5,
+          text:
+            "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month."
+        },
+        {
+          stars: 4,
+          text:
+            "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month."
+        },
+        {
+          stars: 5,
+          text:
+            "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24"
+        },
+        {
+          stars: 3,
+          text:
+            "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24"
+        },
+        {
+          stars: 4,
+          text:
+            "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month."
+        }
       ],
       reviewsToDisplay: []
     };
@@ -241,13 +322,11 @@ export default {
     loadReviews() {
       if (this.rIndex < 23) {
         this.reviewsToDisplay = [];
-
         for (let i = this.rIndex; i < this.rIndex + 8; i++) {
           this.reviewsToDisplay.push(this.reviews[i]);
         }
       }
       this.rIndex = this.rIndex + 7;
-      console.log(this.rIndex);
     },
     goBack() {
       this.rIndex = 0;
@@ -258,24 +337,34 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+@import url("https://use.typekit.net/sml7caq.css");
 #app {
   font-family: "Lato", sans-serif;
 }
 .hero-banner {
   width: 100%;
   height: 375px;
-  background: yellow;
+  background: rgb(255, 211, 54);
+  // background: linear-gradient(
+  //   0deg,
+  //   rgba(255, 211, 54, 1) 0%,
+  //   rgba(255, 211, 54, 1) 50%,
+  //   rgba(255, 199, 0, 1) 100%
+  // );
+  background-image: url("assets/hex-pattern.svg");
+  // background-repeat: repeat-y;
+  padding-left: 70px;
+  
   .download {
-    padding-top: 40px;
+    padding-top: 30px;
     font-size: 54px;
-    font: normal normal 300 54px/40px Omnes;
+    font-family: "omnes-pro", sans-serif;
     text-align: center;
     color: #262626;
     letter-spacing: 0px;
   }
   .saving {
-    padding-top: 10px;
     text-align: center;
     font: normal normal bold 24px/40px Lato;
     letter-spacing: 0px;
@@ -289,10 +378,10 @@ export default {
     .app {
       width: 230px;
       height: 485px;
-      margin-right: 70px;
+      margin-right: 45px;
     }
     .right-section {
-      margin-left: 70px;
+      margin-left: 45px;
       display: flex;
       flex-direction: column;
       .list {
@@ -305,7 +394,7 @@ export default {
       }
       .desc {
         text-align: left;
-        font: normal normal normal 18px/32px Lato;
+        font: normal normal normal 20px/32px Lato;
         letter-spacing: 0px;
         color: #262626;
         opacity: 1;
@@ -322,8 +411,22 @@ export default {
           display: block;
           margin-bottom: 12px;
         }
-        .number {
-          min-width: 500px;
+        .input-group-text {
+          background-color: #fff !important;
+          padding-right: 5px;
+          border-right: none !important;
+        }
+        .form-control {
+          outline: none !important;
+          padding: 20px 0.75rem !important;
+          border-left: none !important;
+          letter-spacing: 0px !important;
+          color: #b2b2b2 !important;
+          box-shadow: none;
+        }
+        .form-control:focus {
+          border-color: rgb(206, 212, 218);
+          border-left: none;
         }
         button {
           color: #fff;
@@ -374,29 +477,30 @@ export default {
     width: 1325px;
     margin-left: auto;
     margin-right: auto;
-    height: 928px;
+    height: 978px;
     background: #fef8e6 0% 0% no-repeat padding-box;
     .title {
       padding-top: 25px;
-      font: normal normal 600 20px/24px Lato;
+      font: normal normal 600 20px/24px omnes-pro;
       letter-spacing: 2px;
       color: #262626;
       text-transform: uppercase;
       opacity: 1;
       border-bottom: 3px solid #b33cc8;
-      width: 237px;
+      width: 233px;
       margin-left: auto;
       margin-right: auto;
       line-height: 30px;
     }
     .reviews-container {
+      margin-top: 50px;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       width: 1300px;
     }
     .read-more {
-      margin-top: 50px;
+      margin-top: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -416,13 +520,13 @@ export default {
 .app-perks-section {
   .title {
     padding-top: 25px;
-    font: normal normal 600 20px/24px Lato;
+    font: normal normal 600 20px/24px omnes-pro;
     letter-spacing: 2px;
     color: #262626;
     text-transform: uppercase;
     opacity: 1;
     border-bottom: 3px solid #b33cc8;
-    width: 268px;
+    width: 258px;
     margin-left: auto;
     margin-right: auto;
     line-height: 30px;
@@ -458,19 +562,23 @@ export default {
   height: 242px;
   background: #b33cc8 0% 0% no-repeat padding-box;
   opacity: 1;
+  width: 100%;
   .footer-content {
-    padding: 60px 170px;
+    padding: 60px 200px;
+    padding-bottom: 0px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .left {
       text-align: center;
       .heading {
-        font: normal normal normal 32px/36px Omnes;
+        font: normal normal normal 32px/36px omnes-pro;
         letter-spacing: 0px;
         color: #ffc700;
         opacity: 1;
       }
       .save {
+        margin-top: 10px;
         font: normal normal bold 20px/24px Lato;
         letter-spacing: 0px;
         color: #ffffff;
@@ -498,10 +606,29 @@ export default {
         margin-top: 20px;
         width: 171px;
         height: 40px;
-        background: #b33cc8 0% 0% no-repeat padding-box;
+        background: #ffc700 0% 0% no-repeat padding-box;
         border-radius: 28px;
         opacity: 1;
         border: none;
+        outline: none;
+      }
+      .input-group-text {
+        background-color: #fff !important;
+        padding-right: 0px;
+        margin-left: -25px;
+        padding-left: 25px;
+      }
+      .form-control {
+        outline: none !important;
+        padding: 20px 3.5rem !important;
+        padding-left: 0.75rem !important;
+        border-left: none !important;
+        letter-spacing: 0px !important;
+        color: #b2b2b2 !important;
+        box-shadow: none;
+      }
+      .form-control:focus {
+        border-color: rgb(206, 212, 218);
       }
     }
   }

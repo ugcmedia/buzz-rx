@@ -8,13 +8,42 @@
       John Smith
     </div>
     <div class="ratings">
-      Rating
+      <img
+        src="@/assets/star.svg"
+        alt="Star"
+        class="star"
+        :class="{ active: review.stars > 0 }"
+      />
+      <img
+        src="@/assets/star.svg"
+        alt="Star"
+        class="star"
+        :class="{ active: review.stars > 1 }"
+      />
+      <img
+        src="@/assets/star.svg"
+        alt="Star"
+        class="star"
+        :class="{ active: review.stars > 2 }"
+      />
+      <img
+        src="@/assets/star.svg"
+        alt="Star"
+        class="star"
+        :class="{ active: review.stars > 3 }"
+      />
+      <img
+        src="@/assets/star.svg"
+        alt="Star"
+        class="star"
+        :class="{ active: review.stars > 4 }"
+      />
     </div>
     <div class="date">
       September 14, 2020
     </div>
     <div class="review">
-      {{ review }}
+      {{ review.text }}
     </div>
   </div>
 </template>
@@ -24,8 +53,8 @@ export default {
   name: "Review",
   props: {
     review: {
-      type: String,
-      default: "Love this app! It saves me $24 on my prescription every month."
+      type: Object,
+      default: () => {}
     }
   }
 };
@@ -59,8 +88,14 @@ export default {
   }
   .ratings {
     margin-top: 12px;
-    background: #b33cc8 0% 0% no-repeat padding-box;
     opacity: 1;
+    .star {
+      opacity: 0.2;
+      margin: 2px;
+    }
+    .active {
+      opacity: 1;
+    }
   }
   .date {
     font: normal normal normal 14px/30px Lato;
@@ -72,9 +107,11 @@ export default {
     margin-top: 12px;
     font: normal normal normal 16px/20px Lato;
     letter-spacing: 0px;
+    padding: 0px 4px;
     color: #262626;
     opacity: 1;
     flex-wrap: wrap;
+    font-weight: 500;
   }
 }
 </style>

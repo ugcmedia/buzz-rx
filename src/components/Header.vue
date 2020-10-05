@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="light">
+    <b-navbar class="nav" toggleable="lg" type="dark" variant="light">
       <b-navbar-brand href="#"
         ><img src="@/assets/BuzzRx-Logo.svg" alt="logo"
       /></b-navbar-brand>
@@ -22,4 +22,13 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.nav {
+  padding: 10px 50px !important;
+  .dropdown-item{
+    font-family: "lato", sans-serif !important;
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+</style>
