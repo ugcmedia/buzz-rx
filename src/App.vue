@@ -82,16 +82,71 @@
       </div>
     </div>
     <!-- Hero Banner Ends -->
+    <!-- Reviews Section Starts -->
+    <div class="reviews-section-container">
+      <div class="reviews-section">
+        <div class="title">LATEST APP REVIEWS</div>
+
+        <div class="reviews-container">
+          <div v-for="(review, index) in reviewsToDisplay" :key="index">
+            <Review :review="review" />
+          </div>
+        </div>
+        <div class="read-more">
+          <button class="read-more-btn">
+            READ MORE REVIEWS
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
+import Review from "./components/Review.vue";
 
 export default {
   name: "App",
   components: {
-    Header
+    Header,
+    Review
+  },
+  data() {
+    return {
+      index: 8,
+      reviews: [
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
+        "Love this app! It saves me $24 on my prescription every month.",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
+        "Love this app! It saves me $24 on my prescription every month.",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.Love this app! It saves me $24 on my prescription every",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.Love this app! It saves me $24 on my prescription every",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
+        "aa",
+        "ss",
+        "ss",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
+        " Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
+        "dsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssd",
+        "ff",
+        "sdl"
+      ]
+    };
+  },
+  computed: {
+    reviewsToDisplay() {
+      let showArray = [];
+      for (let i = this.index; i < this.index + 8; i++) {
+        showArray.push(this.reviews[i]);
+      }
+      return showArray;
+    }
   }
 };
 </script>
@@ -198,6 +253,51 @@ export default {
         margin-left: 25px;
         margin-right: 25px;
       }
+    }
+  }
+}
+.reviews-section-container {
+  width: 100%;
+  background: #fef8e6 0% 0% no-repeat padding-box;
+  .reviews-section {
+    margin-top: 520px;
+    width: 1325px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 928px;
+    background: #fef8e6 0% 0% no-repeat padding-box;
+    .title {
+      padding-top: 25px;
+      font: normal normal 600 20px/24px Lato;
+      letter-spacing: 2px;
+      color: #262626;
+      text-transform: uppercase;
+      opacity: 1;
+      border-bottom: 3px solid #b33cc8;
+      width: 237px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 30px;
+    }
+    .reviews-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 1300px;
+    }
+    .read-more {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .read-more-btn {
+      background: #b33cc8 0% 0% no-repeat padding-box;
+      border-radius: 28px;
+      opacity: 1;
+      width: 228px;
+      height: 40px;
+      border: none;
     }
   }
 }
