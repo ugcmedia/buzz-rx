@@ -3,69 +3,67 @@
     <Header />
     <!-- Hero Banner Starts -->
     <div class="hero-banner">
-      <div class="hero-space">
-        <div class="download">
-          Download the App
-        </div>
-        <div class="saving">
-          Save up to 80% on your prescriptions instantly!
-        </div>
-        <div class="grid">
-          <img class="app" src="@/assets/BuzzRx-App.png" alt="BuzzRx App" />
-          <div class="right-section">
-            <div class="list">
-              <div>
-                <img class="check" src="@/assets/group.svg" alt="Check" />
-                <span class="desc">
-                  On-the-go Savings
-                </span>
-              </div>
-              <div>
-                <img class="check" src="@/assets/group.svg" alt="Check" />
-                <span class="desc">
-                  Price Alerts
-                </span>
-              </div>
-              <div>
-                <img class="check" src="@/assets/group.svg" alt="Check" />
-                <span class="desc">
-                  Save your Prescriptions
-                </span>
-              </div>
-              <div>
-                <img class="check" src="@/assets/group.svg" alt="Check" />
-                <span class="desc">
-                  Set Refill Reminders
-                </span>
-              </div>
-              <div>
-                <img class="check" src="@/assets/group.svg" alt="Check" />
-                <span class="desc">
-                  Locate Pharmacies
-                </span>
-              </div>
-            </div>
-
-            <div class="free-app">
-              <span>
-                Text me the FREE app!
+      <div class="download">
+        Download the App
+      </div>
+      <div class="saving">
+        Save up to 80% on your prescriptions instantly!
+      </div>
+      <div class="grid">
+        <img class="app" src="@/assets/BuzzRx-App.png" alt="BuzzRx App" />
+        <div class="right-section">
+          <div class="list">
+            <div>
+              <img class="check" src="@/assets/group.svg" alt="Check" />
+              <span class="desc">
+                On-the-go Savings
               </span>
-              <b-input-group>
-                <b-input-group-prepend is-text>
-                  <img src="@/assets/text.svg" alt="phone" />
-                </b-input-group-prepend>
-                <b-form-input
-                  aria-label="Text input"
-                  placeholder="Enter Phone Number"
-                ></b-form-input>
-              </b-input-group>
-              <button @click="$bvModal.show('text-modal')">
-                GET THE APP
-              </button>
-              <div class="download-app">
-                <img src="@/assets/app-store-badge.svg" alt="App Store" />
-                <img src="@/assets/google-play-badge.svg" alt="Google Play" />
-              </div>
+            </div>
+            <div>
+              <img class="check" src="@/assets/group.svg" alt="Check" />
+              <span class="desc">
+                Price Alerts
+              </span>
+            </div>
+            <div>
+              <img class="check" src="@/assets/group.svg" alt="Check" />
+              <span class="desc">
+                Save your Prescriptions
+              </span>
+            </div>
+            <div>
+              <img class="check" src="@/assets/group.svg" alt="Check" />
+              <span class="desc">
+                Set Refill Reminders
+              </span>
+            </div>
+            <div>
+              <img class="check" src="@/assets/group.svg" alt="Check" />
+              <span class="desc">
+                Locate Pharmacies
+              </span>
+            </div>
+          </div>
+
+          <div class="free-app">
+            <span>
+              Text me the FREE app!
+            </span>
+            <b-input-group>
+              <b-input-group-prepend is-text>
+                <img src="@/assets/text.svg" alt="phone" />
+              </b-input-group-prepend>
+              <b-form-input
+                aria-label="Text input"
+                placeholder="Enter Phone Number"
+              ></b-form-input>
+            </b-input-group>
+            <button @click="$bvModal.show('text-modal')">
+              GET THE APP
+            </button>
+            <div class="download-app">
+              <img src="@/assets/app-store-badge.svg" alt="App Store" />
+              <img src="@/assets/google-play-badge.svg" alt="Google Play" />
             </div>
           </div>
         </div>
@@ -352,15 +350,8 @@ export default {
   width: 100%;
   height: 375px;
   background: rgb(255, 211, 54);
-  background-image: url("assets/hex-pattern.svg");
-  padding-left: 70px;
-  .hero-space {
-    background-image: url("assets/hex-space.svg");
-    height: 375px;
-    overflow: visible;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+  background-image: url("assets/Artboard.svg");
+  background-position: center;
   .download {
     padding-top: 30px;
     font-size: 54px;
@@ -455,7 +446,7 @@ export default {
     }
   }
   .info {
-    margin-top: 350px;
+    margin-top: 70px;
     .as-seen {
       text-align: center;
       font: normal normal normal 14px/30px Lato;
