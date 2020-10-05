@@ -92,10 +92,97 @@
             <Review :review="review" />
           </div>
         </div>
-        <div class="read-more">
-          <button class="read-more-btn">
+        <div v-if="rIndex < 21" class="read-more">
+          <button class="read-more-btn" @click="loadReviews">
             READ MORE REVIEWS
           </button>
+        </div>
+        <div v-if="rIndex > 20" class="read-more">
+          <button class="read-more-btn" @click="goBack">
+            Go Back
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Reviews Section Ends -->
+    <!-- App Perks Section Starts -->
+    <div class="app-perks-section">
+      <div class="title">USING THE BUZZRX APP</div>
+      <div class="screens-container">
+        <div class="single-screen">
+          <div class="benefit-title">
+            1. SEARCH BY DRUG NAME
+          </div>
+          <div class="description">
+            Type in your prescription drug name and select your dosage.
+          </div>
+          <img class="screen" src="@/assets/screen-1.png" alt="Search Image" />
+        </div>
+        <div class="single-screen">
+          <div class="benefit-title">
+            1. SEARCH BY DRUG NAME
+          </div>
+          <div class="description">
+            Type in your prescription drug name and select your dosage.
+          </div>
+          <img class="screen" src="@/assets/screen-2.png" alt="Price Image" />
+        </div>
+        <div class="single-screen">
+          <div class="benefit-title">
+            1. SEARCH BY DRUG NAME
+          </div>
+          <div class="description">
+            Type in your prescription drug name and select your dosage.
+          </div>
+          <img class="screen" src="@/assets/screen-3.png" alt="Coupon Image" />
+        </div>
+        <div class="single-screen">
+          <div class="benefit-title">
+            1. SEARCH BY DRUG NAME
+          </div>
+          <div class="description">
+            Type in your prescription drug name and select your dosage.
+          </div>
+          <img class="screen" src="@/assets/screen-4.png" alt="Fav Image" />
+        </div>
+      </div>
+    </div>
+    <!-- App Perks Section Ends -->
+    <!-- Footer -->
+    <div class="footer-cotainer">
+      <div class="footer-content">
+        <div class="left">
+          <div class="heading">Never Pay Full Price at the Pharmacy Again</div>
+          <div class="save">
+            Get the FREE BuzzRx app and save today!
+          </div>
+          <div class="download-app">
+            <img src="@/assets/app-store-badge.svg" alt="App Store" />
+            <img src="@/assets/google-play-badge.svg" alt="Google Play" />
+          </div>
+        </div>
+        <div class="right">
+          <span>
+            Text me the FREE app!
+          </span>
+          <div class="number">
+            <b-input-group>
+              <b-input-group-prepend is-text>
+                <img src="@/assets/text.svg" alt="phone" />
+              </b-input-group-prepend>
+              <b-form-input
+                aria-label="Text input"
+                placeholder="Enter Phone Number"
+              ></b-form-input>
+            </b-input-group>
+          </div>
+
+          <button>
+            GET THE APP
+          </button>
+          <div class="text-me">
+            Text me the FREE app
+          </div>
         </div>
       </div>
     </div>
@@ -114,38 +201,57 @@ export default {
   },
   data() {
     return {
-      index: 8,
+      rIndex: 0,
       reviews: [
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
         "Love this app! It saves me $24 on my prescription every month.",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
-        "Love this app! It saves me $24 on my prescription every month.",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
+        "Love this app! It saves me $24",
         "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.Love this app! It saves me $24 on my prescription every",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.Love this app! It saves me $24 on my prescription every",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
-        "aa",
-        "ss",
-        "ss",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
-        " Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
-        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every",
-        "dsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssd",
-        "ff",
-        "sdl"
-      ]
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24",
+        "Love this app! It saves me $24",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24",
+        "Love this app! It saves me $24",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
+        "Love this app! It saves me $24 on my prescription every month.",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
+        "Love this app! It saves me $24",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
+        "Love this app! It saves me $24 on my prescription every month.",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month.",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24",
+        "Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month. Love this app! It saves me $24 on my prescription every month."
+      ],
+      reviewsToDisplay: []
     };
   },
+  mounted() {
+    this.loadReviews();
+  },
   computed: {
-    reviewsToDisplay() {
-      let showArray = [];
-      for (let i = this.index; i < this.index + 8; i++) {
-        showArray.push(this.reviews[i]);
+    reviewsAvailable() {
+      return true;
+    }
+  },
+  methods: {
+    loadReviews() {
+      if (this.rIndex < 23) {
+        this.reviewsToDisplay = [];
+
+        for (let i = this.rIndex; i < this.rIndex + 8; i++) {
+          this.reviewsToDisplay.push(this.reviews[i]);
+        }
       }
-      return showArray;
+      this.rIndex = this.rIndex + 7;
+      console.log(this.rIndex);
+    },
+    goBack() {
+      this.rIndex = 0;
+      this.loadReviews();
     }
   }
 };
@@ -215,6 +321,9 @@ export default {
         span {
           display: block;
           margin-bottom: 12px;
+        }
+        .number {
+          min-width: 500px;
         }
         button {
           margin-top: 20px;
@@ -292,12 +401,107 @@ export default {
       align-items: center;
     }
     .read-more-btn {
+      outline: none;
       background: #b33cc8 0% 0% no-repeat padding-box;
       border-radius: 28px;
       opacity: 1;
       width: 228px;
       height: 40px;
       border: none;
+      color: #fff;
+    }
+  }
+}
+.app-perks-section {
+  .title {
+    padding-top: 25px;
+    font: normal normal 600 20px/24px Lato;
+    letter-spacing: 2px;
+    color: #262626;
+    text-transform: uppercase;
+    opacity: 1;
+    border-bottom: 3px solid #b33cc8;
+    width: 268px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 30px;
+  }
+  .screens-container {
+    margin: 60px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    .single-screen {
+      .benefit-title {
+        text-align: center;
+        font: normal normal bold 16px/20px Lato;
+        letter-spacing: 0px;
+        color: #262626;
+      }
+      .description {
+        text-align: center;
+        font: normal normal normal 16px/20px Lato;
+        letter-spacing: 0px;
+        color: #262626;
+        width: 280px;
+      }
+      .screen {
+        width: 268px;
+        height: 282px;
+        opacity: 1;
+      }
+    }
+  }
+}
+.footer-cotainer {
+  height: 242px;
+  background: #b33cc8 0% 0% no-repeat padding-box;
+  opacity: 1;
+  .footer-content {
+    padding: 60px 170px;
+    display: flex;
+    justify-content: space-between;
+    .left {
+      text-align: center;
+      .heading {
+        font: normal normal normal 32px/36px Omnes;
+        letter-spacing: 0px;
+        color: #ffc700;
+        opacity: 1;
+      }
+      .save {
+        font: normal normal bold 20px/24px Lato;
+        letter-spacing: 0px;
+        color: #ffffff;
+        opacity: 1;
+      }
+      .download-app {
+        margin-top: 40px;
+        img {
+          margin-left: 7px;
+          margin-right: 7px;
+        }
+      }
+    }
+    .right {
+      span {
+        display: block;
+        margin-bottom: 12px;
+        color: #ffffff;
+        font: normal normal bold 18px/30px Lato;
+        letter-spacing: 0px;
+        color: #ffffff;
+        opacity: 1;
+      }
+      button {
+        margin-top: 20px;
+        width: 171px;
+        height: 40px;
+        background: #b33cc8 0% 0% no-repeat padding-box;
+        border-radius: 28px;
+        opacity: 1;
+        border: none;
+      }
     }
   }
 }
