@@ -501,6 +501,7 @@ export default {
 .reviews-section-container {
   width: 100%;
   background: #fef8e6 0% 0% no-repeat padding-box;
+  padding-bottom: 44px;
   .reviews-section {
     margin-top: 520px;
     width: 1325px;
@@ -556,7 +557,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
   .title {
-    padding-top: 25px;
+    padding-top: 58px;
     font: normal normal 600 20px/24px omnes-pro;
     letter-spacing: 2px;
     color: #262626;
