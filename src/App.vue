@@ -603,6 +603,9 @@ export default {
   opacity: 1;
   width: 100%;
   .footer-content {
+    width: 1325px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 60px 200px;
     padding-bottom: 0px;
     display: flex;
@@ -685,7 +688,6 @@ export default {
   animation: slide-in 0.5s forwards;
   -webkit-animation: slide-in 0.5s forwards;
 }
-
 @keyframes slide-in {
   0% {
     -webkit-transform: translateX(100%);
@@ -694,7 +696,6 @@ export default {
     -webkit-transform: translateX(0%);
   }
 }
-
 @-webkit-keyframes slide-in {
   0% {
     transform: translateX(100%);
