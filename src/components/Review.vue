@@ -68,7 +68,8 @@ export default {
   box-shadow: 0px 3px 6px #00000029;
   text-align: center;
   border-radius: 25px;
-  margin: 22px 22px;
+  margin: 22px 12px;
+  border: none;
   .thumbail {
     margin-top: 10px;
     span {

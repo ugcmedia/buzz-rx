@@ -56,9 +56,11 @@
               <b-form-input
                 aria-label="Text input"
                 placeholder="Enter Phone Number"
+                v-model="fNumber"
+                @input="serializeOne"
               ></b-form-input>
             </b-input-group>
-            <button @click="$bvModal.show('text-modal')">
+            <button class="get-app-btn" @click="$bvModal.show('text-modal')">
               GET THE APP
             </button>
             <div class="download-app">
@@ -88,7 +90,7 @@
       <div class="reviews-section">
         <div class="title">LATEST APP REVIEWS</div>
 
-        <div class="reviews-container">
+        <div id="reviews" class="reviews-container slide-in">
           <div v-for="(review, index) in reviewsToDisplay" :key="index">
             <Review :review="review" />
           </div>
@@ -121,28 +123,28 @@
         </div>
         <div class="single-screen">
           <div class="benefit-title">
-            1. SEARCH BY DRUG NAME
+            2. CHOOSE THE BEST PRICE
           </div>
           <div class="description">
-            Type in your prescription drug name and select your dosage.
+            Select the best price at a participating pharmacy near you.
           </div>
           <img class="screen" src="@/assets/screen-2.png" alt="Price Image" />
         </div>
         <div class="single-screen">
           <div class="benefit-title">
-            1. SEARCH BY DRUG NAME
+            3. SHOW YOUR COUPON
           </div>
           <div class="description">
-            Type in your prescription drug name and select your dosage.
+            Show the coupon to your pharmacist directly from the app.
           </div>
           <img class="screen" src="@/assets/screen-3.png" alt="Coupon Image" />
         </div>
         <div class="single-screen">
           <div class="benefit-title">
-            1. SEARCH BY DRUG NAME
+            4. SAVE YOUR FAVORITES
           </div>
           <div class="description">
-            Type in your prescription drug name and select your dosage.
+            Save the prescription discount coupons to your favorites
           </div>
           <img class="screen" src="@/assets/screen-4.png" alt="Fav Image" />
         </div>
@@ -174,6 +176,8 @@
               <b-form-input
                 aria-label="Text input"
                 placeholder="Enter Phone Number"
+                v-model="sNumber"
+                @input="serializeTwo"
               ></b-form-input>
             </b-input-group>
           </div>
@@ -201,6 +205,8 @@ export default {
   },
   data() {
     return {
+      fNumber: "",
+      sNumber: "",
       rIndex: 0,
       reviews: [
         {
@@ -315,6 +321,10 @@ export default {
     };
   },
   mounted() {
+    let el = document.getElementById("reviews");
+    el.addEventListener("webkitAnimationEnd", () => {
+      el.classList.remove("slide-in");
+    });
     this.loadReviews();
   },
   computed: {
@@ -323,7 +333,21 @@ export default {
     }
   },
   methods: {
+    serializeOne() {
+      let len = this.fNumber.length;
+      if (len == 3 || len == 7) {
+        this.fNumber = this.fNumber + "-";
+      }
+    },
+    serializeTwo() {
+      let len = this.sNumber.length;
+      if (len == 3 || len == 7) {
+        this.sNumber = this.sNumber + "-";
+      }
+    },
     loadReviews() {
+      let el = document.getElementById("reviews");
+      el.classList.add("slide-in");
       if (this.rIndex < 23) {
         this.reviewsToDisplay = [];
         for (let i = this.rIndex; i < this.rIndex + 8; i++) {
@@ -417,14 +441,17 @@ export default {
           padding: 20px 0.75rem !important;
           border-left: none !important;
           letter-spacing: 0px !important;
-          color: #b2b2b2 !important;
+          color: #b33cc8 !important;
           box-shadow: none;
         }
         .form-control:focus {
-          border-color: rgb(206, 212, 218);
-          border-left: none;
+          margin-left: -28px !important;
+          border-color: #b33cc8 !important;
+          border-left: 1px solid #b33cc8 !important ;
+          border-radius: 0.25rem !important;
+          box-shadow: 0 0 5px #b33cc8;
         }
-        button {
+        .get-app-btn {
           color: #fff;
           margin-top: 20px;
           width: 171px;
@@ -434,6 +461,11 @@ export default {
           opacity: 1;
           border: none;
           outline: none;
+        }
+        .get-app-btn:hover {
+          color: #b33cc8;
+          background: #fff 0% 0% no-repeat padding-box;
+          border: 1px solid #b33cc8;
         }
         .download-app {
           margin-top: 40px;
@@ -477,7 +509,7 @@ export default {
     height: 978px;
     background: #fef8e6 0% 0% no-repeat padding-box;
     .title {
-      padding-top: 25px;
+      padding-top: 53px;
       font: normal normal 600 20px/24px omnes-pro;
       letter-spacing: 2px;
       color: #262626;
@@ -492,7 +524,7 @@ export default {
     .reviews-container {
       margin-top: 50px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       flex-wrap: wrap;
       width: 1300px;
     }
@@ -512,9 +544,17 @@ export default {
       border: none;
       color: #fff;
     }
+    .read-more-btn:hover {
+      color: #b33cc8;
+      background: #fef8e6 0% 0% no-repeat padding-box;
+      border: 1px solid #b33cc8;
+    }
   }
 }
 .app-perks-section {
+  width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
   .title {
     padding-top: 25px;
     font: normal normal 600 20px/24px omnes-pro;
@@ -532,8 +572,9 @@ export default {
     margin: 60px;
     margin-bottom: 0px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     .single-screen {
+      margin: 0px 15px;
       .benefit-title {
         text-align: center;
         font: normal normal bold 16px/20px Lato;
@@ -541,8 +582,9 @@ export default {
         color: #262626;
       }
       .description {
+        margin-top: 8px;
         text-align: center;
-        font: normal normal normal 16px/20px Lato;
+        font: normal normal normal 17px/20px Lato;
         letter-spacing: 0px;
         color: #262626;
         width: 280px;
@@ -609,11 +651,17 @@ export default {
         border: none;
         outline: none;
       }
+      button:hover {
+        color: #fff;
+        background: #b33cc8 0% 0% no-repeat padding-box;
+        border: 1px solid #fff;
+      }
       .input-group-text {
         background-color: #fff !important;
         padding-right: 0px;
         margin-left: -25px;
         padding-left: 25px;
+        border: none !important;
       }
       .form-control {
         outline: none !important;
@@ -621,13 +669,38 @@ export default {
         padding-left: 0.75rem !important;
         border-left: none !important;
         letter-spacing: 0px !important;
-        color: #b2b2b2 !important;
+        color: #b33cc8 !important;
+        // color: #b2b2b2 !important;
         box-shadow: none;
+        border: none !important;
       }
       .form-control:focus {
-        border-color: rgb(206, 212, 218);
+        border-color: #fff !important;
+        box-shadow: none !important;
       }
     }
+  }
+}
+.slide-in {
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in 0.5s forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 </style>
